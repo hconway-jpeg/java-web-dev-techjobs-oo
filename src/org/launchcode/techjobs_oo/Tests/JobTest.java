@@ -49,9 +49,9 @@ public class JobTest {
         assertFalse(unequalJob1.equals(unequalJob2));
     }
 
-//    @Test
-//    public void testToStringMethod() {
-//        //
-//    }
+    @Test
+    public void testToStringMethod() {
+        assertEquals("ID: " + fancyJob.getId() + "\n" + "Name: " + fancyJob.getName() + "\n" + "Employer: " + fancyJob.getEmployer() + "\n" + "Location: " + fancyJob.getLocation() + "\n" + "Position Type: " + fancyJob.getPositionType() + "\n" + "Core Competency: " + fancyJob.getCoreCompetency(), fancyJob.toString());
+    }
 
 }

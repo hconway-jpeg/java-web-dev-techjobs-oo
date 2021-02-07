@@ -47,7 +47,6 @@ public class PositionType {
     public String getValue() {
         return value;
     }
-
     public void setValue(String aValue) {
         this.value = aValue;
     }
