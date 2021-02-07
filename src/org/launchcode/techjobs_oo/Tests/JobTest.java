@@ -30,17 +30,23 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        //assertTrue(fancyJob.getId() instanceof int); **HELP**
+        assertTrue((Integer)fancyJob.getId() instanceof Integer);
+        assertEquals(3, fancyJob.getId());
         assertTrue(fancyJob.getName() instanceof String);
+        assertEquals("Product Tester", fancyJob.getName());
         assertTrue(fancyJob.getEmployer() instanceof Employer);
+        assertEquals("ACME", fancyJob.getEmployer().toString());
         assertTrue(fancyJob.getLocation() instanceof Location);
+        assertEquals("Desert", fancyJob.getLocation().toString());
         assertTrue(fancyJob.getPositionType() instanceof PositionType);
+        assertEquals("Quality control", fancyJob.getPositionType().toString());
         assertTrue(fancyJob.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals("Persistence", fancyJob.getCoreCompetency().toString());
     }
 
     @Test
     public void testJobsForEquality() {
-        assertFalse(unequalJob1 == unequalJob2);
+        assertFalse(unequalJob1.equals(unequalJob2));
     }
 
 //    @Test
