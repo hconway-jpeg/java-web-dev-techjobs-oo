@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.Objects;
+
 public abstract class JobField {
     //shared fields
     private int id;
@@ -20,6 +22,12 @@ public abstract class JobField {
     //shared custom methods
     public String toString() {
         return value;
+    }
+
+
+
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 
     //shared getters and setters
