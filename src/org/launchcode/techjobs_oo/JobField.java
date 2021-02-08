@@ -26,6 +26,13 @@ public abstract class JobField {
         return value;
     }
 
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobField)) return false;
+        JobField jobField = (JobField) o;
+        return getId() == jobField.getId();
+    }
+
     public int hashCode() {
         return Objects.hash(getId());
     }
@@ -47,5 +54,4 @@ public abstract class JobField {
     public void setValue(String aValue) {
         this.value = aValue;
     }
-
 }

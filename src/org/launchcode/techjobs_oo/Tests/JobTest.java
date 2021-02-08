@@ -34,7 +34,7 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields() {
         assertTrue((Integer)fancyJob.getId() instanceof Integer);
-        assertEquals(8, fancyJob.getId());
+        assertEquals(27, fancyJob.getId());
         assertTrue(fancyJob.getName() instanceof String);
         assertEquals("Product Tester", fancyJob.getName());
         assertTrue(fancyJob.getEmployer() instanceof Employer);
