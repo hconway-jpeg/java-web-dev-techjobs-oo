@@ -4,15 +4,9 @@ import java.util.Objects;
 
 public class Location extends JobField {
 
-//    public Location() {
-//        this.id = nextId;
-//        nextId++;
-//    }
-
-//    public Location(String aValue) {
-//        this();
-//        this.value = aValue;
-//    }
+    public Location(String aValue) {
+        super(aValue);
+    }
 
 
     // Custom toString, equals, and hashCode methods:
@@ -22,13 +16,13 @@ public class Location extends JobField {
 //        return value;
 //    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Location)) return false;
-        Location location = (Location) o;
-        return getId() == location.getId();
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Location)) return false;
+//        Location location = (Location) o;
+//        return getId() == location.getId();
+//    }
 
 //    @Override
 //    public int hashCode() {

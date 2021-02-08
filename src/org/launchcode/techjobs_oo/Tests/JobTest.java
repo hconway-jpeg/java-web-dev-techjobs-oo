@@ -12,6 +12,7 @@ public class JobTest {
     Job fancyJob;
     Job unequalJob1;
     Job unequalJob2;
+    Job invalidFieldJob;
 
     @Before
     public void createJobObject() {
@@ -20,6 +21,8 @@ public class JobTest {
         fancyJob = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         unequalJob1 = new Job("Job Title", new Employer ("LaunchCode"), new Location("Mushroom Forest"), new PositionType("Resident Genius"), new CoreCompetency( "Mad skills"));
         unequalJob2 = new Job("Job Title", new Employer ("LaunchCode"), new Location("Mushroom Forest"), new PositionType("Resident Genius"), new CoreCompetency( "Mad skills"));
+        invalidFieldJob = new Job("Product Tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
     }
 
 //the empty constructor is this()
@@ -49,11 +52,22 @@ public class JobTest {
         assertFalse(unequalJob1.equals(unequalJob2));
     }
 
-//    @Test
-//    public void testToStringMethod() {
-//        Job missingFieldJob = new Job("Job Name", new Employer(""), new Location("Location"), new PositionType("Position"), new CoreCompetency("Core Competency"));
-//        assertEquals("\n" + "ID: " + fancyJob.getId() + "\n" + "Name: " + fancyJob.getName() + "\n" + "Employer: " + fancyJob.getEmployer() + "\n" + "Location: " + fancyJob.getLocation() + "\n" + "Position Type: " + fancyJob.getPositionType() + "\n" + "Core Competency: " + fancyJob.getCoreCompetency() + "\n", fancyJob.toString());
-//        assertEquals("Employer: Data not available", missingFieldJob.getEmployer());
-//    }
+    @Test
+    public void testToStringMethodStartsWithEndsWithBlankLine() {
+        assertTrue(fancyJob.toString().startsWith("\n"));
+        assertTrue(fancyJob.toString().endsWith("\n"));
+    }
+
+    @Test
+    public void testToStringMethodContainsLabelsForFields() {
+        assertEquals("\n" + "ID: " + fancyJob.getId() + "\n" + "Name: " + fancyJob.getName() + "\n" + "Employer: " + fancyJob.getEmployer() + "\n" + "Location: " + fancyJob.getLocation() + "\n" + "Position Type: " + fancyJob.getPositionType() + "\n" + "Core Competency: " + fancyJob.getCoreCompetency() + "\n", fancyJob.toString());
+    }
+
+    @Test
+    public void testDataNotAvailable() {
+        System.out.println(invalidFieldJob.toString());
+        assertEquals("\n" + "ID: " + invalidFieldJob.getId() + "\n" + "Name: " + invalidFieldJob.getName() + "\n" + "Employer: Data not available" + "\n" + "Location: " + invalidFieldJob.getLocation() + "\n" + "Position Type: " + invalidFieldJob.getPositionType() + "\n" + "Core Competency: " + invalidFieldJob.getCoreCompetency() + "\n", invalidFieldJob.toString());
+
+    }
 
 }

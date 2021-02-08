@@ -4,15 +4,9 @@ import java.util.Objects;
 
 public class CoreCompetency extends JobField {
 
-//    public CoreCompetency() {
-//        this.id = nextId;
-//        nextId++;
-//    }
-//
-//    public CoreCompetency(String aValue) {
-//        this();
-//        this.value = aValue;
-//    }
+    public CoreCompetency(String aValue) {
+        super(aValue);
+    }
 
     // Custom toString, equals, and hashCode methods:
 
@@ -21,13 +15,13 @@ public class CoreCompetency extends JobField {
 //        return value;
 //    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CoreCompetency)) return false;
-        CoreCompetency that = (CoreCompetency) o;
-        return id == that.id;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof CoreCompetency)) return false;
+//        CoreCompetency that = (CoreCompetency) o;
+//        return id == that.id;
+//    }
 
 //    @Override
 //    public int hashCode() {

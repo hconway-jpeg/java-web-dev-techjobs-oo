@@ -8,6 +8,7 @@ public abstract class JobField {
     private static int nextId = 1;
     private String value;
 
+
     //shared constructors
     public JobField() {
         this.id = nextId;
@@ -19,16 +20,16 @@ public abstract class JobField {
         this.value = aValue;
     }
 
+
     //shared custom methods
     public String toString() {
         return value;
     }
 
-
-
     public int hashCode() {
         return Objects.hash(getId());
     }
+
 
     //shared getters and setters
     public int getId() {
@@ -36,7 +37,11 @@ public abstract class JobField {
     }
 
     public String getValue() {
-        return value;
+        if (value.equals("")) {
+            return "Data not available";
+        } else {
+            return value;
+        }
     }
 
     public void setValue(String aValue) {
